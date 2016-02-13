@@ -1,0 +1,22 @@
+<div class="div-result" data-ng-switch on="result.type">
+    <div class="animate-switch" data-ng-switch-when="Solid">
+	    <span data-ng-style="{background: result.color_1}">{{result.name}}</span>
+    </div>
+    <div class="animate-switch" data-ng-switch-when="Gradient">
+		<span data-ng-style="{background: 'linear-gradient('+result.color_1+', '+result.color_2+')'}">{{result.name}}</span>
+	</div>
+    <div class="animate-switch" data-ng-switch-default>
+	Enter your name, select a type, then press submit. 
+    </div>
+  </div>
+  
+<form data-ng-submit="submitUser(user)" novalidate="">
+    Name: <input type="text" data-ng-model="user.name">
+    Type: 
+    <select data-ng-model="user.type">
+	    <option>Solid</option>
+	    <option>Gradient</option>
+    </select>
+    <br />
+    <button type="submit">Submit</button>
+</form>
